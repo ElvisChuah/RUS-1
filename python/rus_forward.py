@@ -5,7 +5,6 @@ import scipy.linalg.lapack as lapack
 from math import sqrt
 import rus_tools as rus
 
-
 def start(args):
 
     order   = args.order
@@ -55,21 +54,8 @@ def start(args):
 
     i = 0
     ir1 = 0
-    j=-6
-    myList=[]
-    for k in range(args.nfreq):
-        myList.append(1)
     while ir1 < args.nfreq:
         if ((wsort[i]>0) and ((sqrt(wsort[i])/(2.0*scipy.pi))>0.00001)):
             ir1 += 1
-            result = ((1000000*sqrt(wsort[i])/(2.0*scipy.pi)))
-            myList[j]=result
-            print(result)
-        j += 1
+            print(" f%d = %f" % (ir1, 1000000*sqrt(wsort[i])/(2.0*scipy.pi)))
         i += 1
-    return myList
-		
-def returnArray():
-    return myList
-
-		
